@@ -1,222 +1,209 @@
-# JPress
-![](http://7xv9xp.com1.z0.glb.clouddn.com/1.png)
-
-演示站点：[http://www.yangfuhai.com](http://www.yangfuhai.com)
-
-JFinal和JPress视频教程：[http://www.yangfuhai.com/post/6.html](http://www.yangfuhai.com/post/6.html)
-
-JPress模板制作视频教程：[http://www.yangfuhai.com/post/22.html](http://www.yangfuhai.com/post/22.html)
-
-JPress官网：[http://jpress.io](http://jpress.io) 
-
-JPress文档：[https://github.com/JpressProjects/jpress/blob/master/DOC.md](https://github.com/JpressProjects/jpress/blob/master/DOC.md) 
+![](./doc/images/screenshot.png)
 
 
-## 简介
-JPress，一个wordpress的java代替版本，使用JFinal开发。支持类似wordpress的几乎所有功能，比如：模板，插件等。同时在模板上，JPress提出了“模板即模型”的概念，方便模板制作人灵活制作业务模型，移除了widget等繁杂功能，同时在模板和插件制作上比wordpress更加灵活简洁。
+<h1 align="center"><a href="http://www.jpress.io" target="_blank"> JPress </a></h1>
 
-但是，JPress又不是wordpress的java版本，它天生融合了微信公众平台，整合了国内众多云平台、短信发送、邮件发送平台，独创的“模板即模型”概念是wordpress所不具备的，只有资深的wordpress玩家才能体会里面的微妙关系。同时后续会添加微信文章同步，QQ公众平台，今日头条，一点资讯等新媒体的文章同步功能，更加国产和本地化。
-
-## 在功能方面
-*  支持自定义模型，自定义模型通过模板来定义，而不是后台功能。同时模型内容支持自定义类别，比如文章模型支持专题、分类、标签等类别。
-* 支持多模板引擎，默认使用Freemarker，模板制作者可以使用其他引擎比如thymeleaf来渲染，同时支持后台在线编辑模板（目前暂时只支持freemarker引擎）。
-* 支持多数据库类型，可以配置不同的数据库（目前暂只支持mysql）。
-* 支持多编辑器，后台可视化编辑和markdown编辑自由切换，默认支持在线图片编辑和代码高亮等功能。
-* 支持插件化，几行代码就可以完成一个插件的开发，git.oschina.net和github上已经有插件的helloworld实例。
-* 支持自定义URL，网站内容URL风格自定义。
-* API支持，方便APP或其他第三方调用数据。
-* 国际化支持，使用JPress轻松制作任何语言的网站。
-* 极简的SEO功能，可以为每篇文章、每个分类、每个标签单独设置SEO，支持sitemap输出。
-* 用户注册支持邮件和短信验证，目前短信服务商暂时只支持阿里大鱼。
-* 支持CDN设置，包括七牛，阿里云，又拍云等。
-* 上传图片支持水印设置，同时上传图片自动剪切成为模板需要的多种图片尺寸，保证图片显示不会拉伸。
-* 用户登录支持第三方登录，支持QQ、微信、微博、开源中国、github、Facebook、twitter、linkedin（目前只完成QQ、微信、微博、开源中国、github的登陆）。
+<p align="center">
+一个使用 Java 开发的类似 WordPress 的产品，并在此基础上增加了电商的功能。
+</p>
 
 
+<p align="center">
+<img alt="release" src="https://img.shields.io/github/release/JpressProjects/jpress.svg?style=flat-square"/>
+<img alt="release" src="https://img.shields.io/github/release-date/JpressProjects/jpress.svg?style=flat-square"/>
+<img alt="commit" src="https://img.shields.io/github/last-commit/JpressProjects/jpress.svg?style=flat-square"/>
+<img alt="issues" src="https://img.shields.io/github/issues-closed/JpressProjects/jpress.svg?style=flat-square"/>
+<img alt="license" src="https://img.shields.io/github/license/JpressProjects/jpress.svg?style=flat-square"/>
+</p>
 
-## 在微信方面
+## 功能
 
-* 支持微信菜单设置。
-* 支持自动回复，添加关键字和回复内容。
-* 支持默认回复，包括：用户关注时、进入多客服时、退出多客服时、发送图片时、发送语音时、发送视频时、发送位置时、发送连接时、用户扫描了带参数的二维码时、用户摇一摇时。
-* 所有的自动回复或默认回复支持“高级回复”功能，比如回复一篇文章，回复一个网址…高级回复是由JPress内置开发的特殊回复，但完全可配置，今后会增加更多的“高级回复”功能。
-* 自动回复或默认回复支持插件回复，调用JPress插件完成回复。
-* 支持文章搜索，回复关键字即可返回关键字匹配文章。
-* 未来会支持文章同步或微信导入等实用功能。
-
-
-## 在技术方面
-* 自豪的采用了JFinal作为核心，JPress也是得益于JFinal灵活的架构。在JFinal framework开源体系里，JPress关心每行逻辑的实现，重视每行代码质量，应该属于JFinal的最佳实践，所以也应该是每个JFinaler必读的项目。
-* 使用Freemarker和thymeleaf作为模板引擎。JPress内置的独创缓存，使得的UI渲染速度已经和模板引擎无关。
-* 使用了tinymce做可视化编辑器，使用simplemde做markdown编辑器。两者可以后台自由切换。
-* 文件和图片上传的UI插件使用了fine-uploader。
-* 在前端上，JPress使用了jquery，bootstrap，admin lte，font-awesome，x-editable，fastclick，toastr，tag-editor，pace，layer等。
-* 在安全方面，尽管我个人做了非常多的努力，已经在XSS，CSRF，SQL注入，Cookie安全等方面做了很多的工作，但是还是需要更多的人来一起挖掘和完善，安全是一个永恒的话题。（但是对于新手朋友来说，这些安全应该都是值得去学习和了解的，不是吗？）
-* 支持分布式部署，JPress重写了HttpSession，使用ehcache实现了session的功能，同时在项目中大量依赖于cookie，在分布式架构上毫无压力。
-
-## JPress有以下特点
-#### 1、 轻。
-
->轻到只有 **8张** 数据表，却能实现wordpress的几乎所有功能。依赖的jar包也极度轻，目前只有cos-26Dec2008.jar、druid-1.0.16.jar、ehcache-2.7.5.jar、fastjson-1.2.7.jar、freemarker-2.3.23.jar、javax.mail.jar、jfinal-2.2-bin-with-src.jar、jfinal-weixin-1.7-bin-with-src.jar、jsoup-1.8.3.jar、log4j-1.2.17.jar、mysql-connector-java-5.1.36.jar、slf4j-api-1.7.7.jar、slf4j-log4j12-1.7.7.jar、jetty-server-8.1.8.jar 这 **14个** jar包，而且其中jetty-server-8.1.8.jar 不是必须的，只用于方便调试。<br /> 包括jar包在内的整个项目在20MB左右。
-
-#### 2、 快。
-
->无论多么复杂的页面，JPress响应几乎在10毫秒内，同时JPress支持阿里云，七牛，又拍云等CDN作为加速，支持分布式部署等功能，就算是香港的服务器，只能用“飞快”来形容。
-
-#### 3、灵活。
-
->JPress提出的“模板即模型”的概念，模板制作人可以用JPress来做博客，新闻系统，论坛，问答社区，商城…加上其灵活的插件功能，几乎可以用来做任何类型的网站。
-
-#### 4、国产。
-
->因为国产，所以更符合国人需求。JPress天生融合了微信公众号，JPress内置了 阿里大鱼 的短信发送功能，支持了QQ邮箱，163邮箱等作为邮件发送服务器，后续会增加微信模板消息发送通知用户等更加符合国人需求的功能。
+#### 内容相关
+- 文章管理
+- 文章分类
+- 文章标签
+- 文章搜索（支持 sql like、Lucene、es、OpenSearch）
+- 用户投稿
+- 页面管理
+- 评论管理
+- 附件管理
 
 
-## 最最重要的的是
-JPress使用了比wordpress更宽松的LGPL开源协议，同时和国内的那些采用了 **私有协议** （比如保留版权，保留连接等）的“开源”产品并不是一个级别的。
-
-###最后来几张截图
-![](http://7xv9xp.com1.z0.glb.clouddn.com/1.png)
-![](http://7xv9xp.com1.z0.glb.clouddn.com/2.png)
-![](http://7xv9xp.com1.z0.glb.clouddn.com/3.png)
-![](http://7xv9xp.com1.z0.glb.clouddn.com/4.png)
-![](http://7xv9xp.com1.z0.glb.clouddn.com/5.png)
-备注：第二套模板（the3）还不完善，如果要做网站请使用第一套模板 或者 自行设计一套模板。
-
-### 目前我在 [全职] 开发JPress，如果您觉得这个产品对您有用，您可以捐助下我，让我有理由继续下去，非常感谢。
-![](http://7xv9xp.com1.z0.glb.clouddn.com/zz.jpg)
-
-
-#### 现在微信捐助无法得知捐助人昵称，欢迎添加我的个人微信:wx198819880
-### 非常感谢以下朋友的捐助：
-
-| 名字      | 金额   | 方式  | 说明  | 时间  |
-| :-------: |:----: | :-----:|----- |-----|
-| 匿名  | ￥10.00  | 微信捐助   | 无 | 2016-8-12 11:19|
-| dythzx  | ￥100.00  | 微信红包   | 希望Jpress越做越好，已经采用做公司的网站了 | 2016-8-12 09:44|
-| skyearth  | ￥2.00  | QQ红包   | 无 | 2016-8-10 23:40|
-| 匿名  | ￥10.00  | 微信捐助   | 无 | 2016-8-9 21:22|
-| Crazy Guy  | ￥10.00  | QQ红包   | 无 | 2016-8-7 18:31|
-| Dee  | ￥99.00  | 微信红包   | 无 | 2016-8-4 23:56|
-| 匿名  | ￥25.00  | 微信捐助   | 无 | 2016-8-4 09:14|
-| 匿名  | ￥10.00  | 微信捐助   | 无 | 2016-8-3 14:41|
-| 聪亮  | ￥18.00  | 微信红包   | 支持一下jpress，加油！ | 2016-8-2 13:37|
-| 程 | ￥100  | 支付宝   | 无 | 2016-8-1 16:42|
-| 吴益峰 | ￥100  | 微信捐助   | 无 | 2016-8-1 16:40|
-| 匿名  | ￥18.00  | 微信捐助   | 无 | 2016-7-30 22:46|
-| 松 | ￥99.99  | 支付宝   | 捐助有价，开源精神无价 | 2016-7-28 16:20|
-| 米松 | ￥28.88  | 支付宝   | 支持一下 | 2016-7-28 15:28|
-| 张富生  | ￥10.00  | 微信红包   | 希望jpress越做越专业 | 2016-7-23 18:37|
-| 来点银子吧  | ￥10.00  | 支付宝   | java就应该有这个项目，坚持，加油！ | 2016-7-23 21:00|
-| 匿名  | ￥9.99  | 微信捐助   | 无 | 2016-7-23 18:37|
-| 昊  | ￥8.00  | 支付宝   | 加油加油 | 2016-7-21 14:40|
-| 匿名  | ￥6.66  | 微信捐助   | 无 | 2016-7-21 10:58|
-| 浒  | ￥1.00  | 支付宝   | 加油 | 2016-7-19 08:06|
-| 指尖沙向  | ￥9.90  | 微信捐助   | 无 | 2016-7-18 15:07|
-| 落落的月(wtf)  | ￥2.00  | 微信捐助   | 无 | 2016-7-18 11:58|
-| Cennac     | ￥1.50  | 微信捐助   | 无 | 2016-7-12 08:09|
-| jungle     | ￥6.66  | 支付宝   | 加油 | 2016-7-11 16:54|
-| 浒     | ￥10.00  | 支付宝   | 加油 | 2016-7-11 14:04|
-| 十里     | ￥66.66  | 微信捐助   | 无 | 2016-7-10 23:23|
-| 甘叶川     | ￥88.80  | 支付宝   | 支持一下 | 2016-7-9 16:49|
-| Mr.Kn   | ￥9.90  | 微信捐助   | 无 | 2016-7-7 10:16|
-| 小李     | ￥6.66  | 支付宝   | 加油| 2016-7-5 11:09|
-| 仔仔     | ￥6.66  | 支付宝   | 支持JPress | 2016-7-5 11:06|
-| beyonds     | ￥6.66  | 支付宝   | 开源的路上，加油 | 2016-7-2 10:38|
-| L RO Xin     | ￥6.66  | 微信捐助   | 无 | 2016-7-1 22:35|
-| 一棵树     | ￥6.66  | 支付宝   | 转账 | 2016-7-1 17:17|
-| 倡萌     | ￥100.00  | 支付宝   | 希望坚持到底，不要虎头蛇尾 | 2016-7-1 12:14|
-| 曾     | ￥20.00  | 支付宝   | z201 没玩过jfinal，来观摩下。 | 2016-6-30 22:43|
-| 一诺雨     | ￥6.60  | 微信捐助   | 无 | 2016-6-29 18:17|
-| 射手座     | ￥30.00  | 微信捐助   | 无 | 2016-6-28 13:21|
-| Jack     | ￥6.66  | 微信捐助   | 无 | 2016-6-24 22:04|
-| 刘亮     | ￥88.00  | 微信捐助   | 无 | 2016-6-24 13:18|
-| 取名字真的很烦     | ￥20.00  | 微信捐助   | 无 | 2016-6-24 00:02|
-| L❤️L     | ￥28.00  | 微信捐助   | 无 | 2016-6-22 17:37|
-| 守望者     | ￥20.00  | 微信捐助   | 无 | 2016-6-22 15:56|
-| 天V梦     | ￥10.24  | 微信捐助   | 无 | 2016-6-22 10:52|
-| 叫我大王     | ￥20.00  | 支付宝   | 简单支持下，加油 | 2016-6-21 15:00|
-| 麋鹿     | ￥8.88  | 微信捐助   | 无 | 2016-6-21 11:53|
-| DNS     | ￥9.99  | 支付宝   | 越做越好，开始学习jpress | 2016-6-19 20:18|
-| 杨子锋     | ￥18.88  | 支付宝   | 支持，学习 | 2016-6-19 12:23|
-| 帅轻     | ￥18.88  | 支付宝   | 为信仰充值 | 2016-6-19 10:32|
-| Macaque     | ￥20.00  | 微信捐助   | 无 | 2016-6-18 23:02|
-| 正灵     | ￥1.00  | 支付宝   | 对jpress支持下 | 2016-6-18 21:42|
-| 黄志清     | ￥18.88  | 微信捐助   | 无 | 2016-6-17 18:48|
-| 啊春       | ￥18.88  | 微信捐助   | 无 | 2016-6-17 12:44|
-| 万利       | ￥6.66  | 微信捐助   | 无 | 2016-6-17 11:17|
-| 做个好农民  | ￥28.88  | 微信捐助   | 无 | 2016-6-16 14:41|
-| 五v熊      | ￥20.00 | 支付宝捐助  | 有beetl版的就更好了 | 2016-6-16 14:34|
-| 明    		| ￥10.00  | 微信捐助   | 无 | 2016-6-16 13:46|
-| 蔡菜      | ￥2.00 | 支付宝捐助  | 加油，快点完成，等着用呢 | 2016-6-16 11:23|
-| Mr.goku    | ￥9.90  | 微信捐助   | 无 | 2016-6-16 10:25|
-| 张腾飞    | ￥20.00 | 微信捐助   | 无 | 2016-6-15 16:04|
-| 浮云      | ￥10.24 | 支付宝捐助  | 支持这样的好项目！ | 2016-6-15 14:49|
-| 兴伟      | ￥20.00 | 支付宝捐助  | 好项目，支持！ | 2016-6-15 11:38|
-| jk(0ZEO-ZHH)   | ￥9.90  | 微信捐助   | 无 | 2016-6-15 11:10|
-| Aguang    | ￥19.99  | 微信捐助   | 无 | 2016-6-14 20:23|
-| 雷电      | ￥7.00  | 微信捐助   | 无 | 2016-6-14 20:22|
-| 漠然      | ￥20.00 | 支付宝捐助  | JPress -mrtid | 2016-6-14 12:34|
-| 雷师奶     | ￥16.88 | 支付宝捐助  | 支持 | 2016-6-14 11:57|
-| 野渔      | ￥13.14  | 微信捐助   | 无 | 2016-6-14 09:49|
-| cknote    | ￥6.66  | 微信捐助   | 无 | 2016-6-14 09:10|
-| 我(enj***@gmail.com) | ￥30.00  | 支付宝捐助   | 祝jpress越来越好！ | 2016-6-13 19:03|
-| 勐萌      | ￥6.66  | 微信捐助   | 无 | 2016-6-13 18:01|
-| 盛宇伟    | ￥2.00  | 微信捐助   | 无 | 2016-6-13 15:41|
-| Dean     | ￥10.00 | 支付宝捐助  | 简单支持下 | 2016-6-13 12:53|
-| 花无雨    | ￥20.00 | 微信捐助   | 无 | 2016-6-13 11:23|
-| 灿灿宝宝  | ￥18.88  | 支付宝捐助 | 要养老婆孩纸，没财权，支持jpess下 | 2016-6-13 11:01|
+#### 电商相关
+- 产品管理
+- 产品分类
+- 产品标签
+- 产品搜索（支持 sql like、Lucene、es、OpenSearch）
+- 产品分销
+- 会员管理
+- 订单管理
+- 分销管理
+- 提现管理
+- 优惠券管理
+- 支付配置
+- 物流配置
 
 
+#### 用户相关
+- 用户管理
+- 会员管理
+- 权限管理
+- 订单管理
+- 用户标签
+- 短信群发
+- 邮件群发
 
-### 您也可以加入JPress交流QQ群：288397536 ，欢迎给我提建议和bug。<br >或者给我邮件：fuhai999@gmail.com 
+
+#### 系统相关
+- 模板管理
+- 插件管理
+- 微信管理
+- 系统管理
 
 
-####0.3版本较之前的版本，数据字段更新如下：
+## 特点
+
+#### 模板
+
+- 模板在线安装、卸载
+- 模板在线启用、切换
+- 在线编辑及实时生效
+- 完善的模板开发文档
+- 极致的模板开发体验
+
+
+#### 插件
+
+- 插件在线安装、卸载
+- 插件在线启用、停止
+- 插件在线更新
+- 支持在插件里添加新的 Controller
+- 支持在插件里添加新的 Handler
+- 支持在插件里添加新的 Interceptor
+- 支持在插件里添加新的 Html、Css 和 Js
+- 支持在插件里创建新的数据库表以及对应的 Model
+- 支持在插件里链接不同的数据库
+- 支持通过插件动态扩展后台菜单和用户中心菜单
+- 插件扩展的菜单支持用户权限设置的管理
+- 插件被停止：该插件的所有Controller、Handler、Intercepter 自动被移除
+- 插件被卸载：该插件的所有资源全部被删除
+
+
+#### 用户
+
+- 独立登录、注册入口
+- 手机短信、邮箱激活功能
+- 用户中心（投稿、文章管理、评论管理、个人资料管理等）
+- 第三方登录：微信、QQ、钉钉、oschina、GitHub等
+- 微信浏览时，通过微信授权自动获取用户信息
+
+
+#### 角色和权限
+
+- 角色管理
+- 全自动、免维护的权限字典（自动发现后台路由、插件安装卸载自动分配对应）
+- 角色和权限的分配
+- 用户多角色功能
+- 超级管理员
+
+
+#### 微信
+
+- 微信公众号对接
+- 微信公众号关键字自动回复
+- 微信公众号菜单设置
+- 微信公众号运营插件
+- 通过运用插件灵活扩展各种微信营销功能
+- 微信小程序对接、和配置
+
+
+#### SEO
+
+- 每篇文章和页面独立的SEO设置
+- Baidu API 的实时推送
+- Baidu 和 Google 的自动 Ping 提交
+- Sitemap 自动生成、后台支持自定义的开启和关闭
+- robots.txt 爬虫蜘蛛的支持
+- 整站伪静态支持，支持自定义开后缀
+
+
+#### 其他
+
+- WordPress、Hexo、Jekyll、微信公众号等文章一键导入
+- 编写文章随意切换 CKEditor 和 Markdown 编辑
+- 最大化、沉侵式的文章编写体验
+- Docker 一键部署
+- 阿里云、腾讯云 CDN 在线配置
+- 阿里云、腾讯云短信验证（用户注册手机验证）
+- 附件自动可配置自动同步阿里云 OSS
+- 完善的API接口配置管理
+- ... （更多等你发现）
+
+
+## 交流
+
+- 官网：[http://www.jpress.io](http://www.jpress.io)
+- 论坛社区：[点击这里](http://www.jpress.io/club)
+- 插件列表：[点击这里](http://www.jpress.io/article/category/plugin)
+- 模板列表：[点击这里](http://www.jpress.io/article/category/template)
+- QQ群：591396171 ，288397536
+
+
+## 帮助文档
+
+- [了解JPress](http://www.jpress.io)
+- [快速开始](http://www.jpress.io/article/34)
+- [安装](http://www.jpress.io/article/34)
+- [升级](./doc/upgrade.md)
+- [使用](./doc/manual.md)
+- [模板开发](http://www.jpress.io/article/39)
+- [二次开发](http://www.jpress.io/article/68)
+- [插件开发](http://www.jpress.io/article/54)
+- [微信运营插件开发](http://www.jpress.io/article/65)
+- [微信小程序开发](http://www.jpress.io/article/67)
+- [视频教程](http://www.jpress.io/article/category/course)
+- [常见问题](./doc/faq.md)
+- [JPress-VIP 会员](./doc/vip.md)
+
+## 运行JPress
+
+
+**在 Docker 上运行**
 
 ```
-content表：
-新增：
- +  `summary` text COMMENT '摘要',
- +  `link_to` varchar(256) DEFAULT NULL COMMENT '连接到(常用于谋文章只是一个连接)',
- +  `markdown_enable` tinyint(1) DEFAULT '0' COMMENT '是否启用markdown',
- +  `author` varchar(128) DEFAULT NULL COMMENT '匿名稿的用户',
- +  `user_email` varchar(128) DEFAULT NULL COMMENT '匿名稿的邮箱',
- +  `user_ip` varchar(128) DEFAULT NULL COMMENT 'IP地址',
- +  `user_agent` text COMMENT '发布浏览agent',
- +  `rate` int(11) DEFAULT NULL COMMENT '评分分数',
- +  `rate_count` int(10) unsigned DEFAULT '0' COMMENT '评分次数',
- +  `comment_time` datetime DEFAULT NULL COMMENT '最后评论时间',
+curl -O https://gitee.com/fuhai/jpress/raw/master/docker-compose.yml && docker-compose up -d
+```
 
-
-
-user表：
-新增：
- +  `realname` varchar(128) DEFAULT NULL COMMENT '实名',
- +  `email_status` varchar(32) DEFAULT NULL COMMENT '邮箱状态（是否认证等）',
- +  `mobile` varchar(32) DEFAULT NULL COMMENT '手机电话',
- +  `mobile_status` varchar(32) DEFAULT NULL COMMENT '手机状态（是否认证等）',
- +  `telephone` varchar(32) DEFAULT NULL COMMENT '固定电话',
- +  `facebook` varchar(256) DEFAULT NULL,
- +  `linkedin` varchar(256) DEFAULT NULL,
- +  `birthday` datetime DEFAULT NULL COMMENT '生日',
- +  `company` varchar(256) DEFAULT NULL COMMENT '公司',
- +  `occupation` varchar(256) DEFAULT NULL COMMENT '职位、职业',
- +  `address` varchar(256) DEFAULT NULL COMMENT '地址',
- +  `zipcode` varchar(128) DEFAULT NULL COMMENT '邮政编码',
- +  `site` varchar(256) DEFAULT NULL COMMENT '个人网址',
- +  `graduateschool` varchar(256) DEFAULT NULL COMMENT '毕业学校',
- +  `education` varchar(256) DEFAULT NULL COMMENT '学历',
- +  `idcardtype` varchar(128) DEFAULT NULL COMMENT '证件类型：身份证 护照 军官证等',
- +  `idcard` varchar(128) DEFAULT NULL COMMENT '证件号码',
-
-
-修改：
--  `weibo` varchar(64) DEFAULT NULL COMMENT '微博',
-+  `weibo` varchar(256) DEFAULT NULL COMMENT '微博',
-
--  `phone` varchar(32) DEFAULT NULL COMMENT '手机电话',
-+  `mobile` varchar(32) DEFAULT NULL COMMENT '手机电话',
-
+**在 Linux 上一键安装**
 
 ```
+wget https://gitee.com/fuhai/jpress/raw/master/install.sh && bash install.sh
+```
+
+> 视频教程链接: https://pan.baidu.com/s/1ciA2DglE-JV-YiU3ojtmew 提取码: 37g5
+
+
+**通过 Eclipse 或者 Idea 等开发工具运行**
+
+- 1、在电脑安装好 Java、Maven 等开发环境
+- 2、将源码下载、并导入 eclipse 或者 idea 
+- 3、在项目的**根目录**，执行 `mvn clean install` 命令进行编译
+- 4、在开发工具，右键运行 `starter/src/main/java/io.jpress.Starter` 下的 `main()` 方法
+- 5、通过浏览器访问 `http://127.0.0.1:8080`，进行自动安装
+
+
+> 可能遇到的问题： 
+> 
+> 1、执行 `mvn clean` 后，再次运行 JPress，JPress 会重新走安装流程。
+>
+> 解决方案： jpress 在安装过程中，会在 `starter/target/classes` 目录下生成的 `jboot.properties` 和 `install.lock` 文件，我们需要把这两个文件复制到 `starter/src/main/resource` 目录下。 因为，jpress 是否安装决定在这两个文件，当我们执行  `mvn clean` 命令时，maven 会清除 target 下的所有文件，从而使 JPress 会再次走安装流程。
+
+
+
+
+## 微信交流群
+
+![](./doc/images/jpress-wechat-group.png)
+
+
+
